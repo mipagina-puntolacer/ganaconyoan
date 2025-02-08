@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GANACONYOAN</title>
+    <link rel="icon" type="Image/jpg" href="logo.png">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        body {
+            text-align: center;
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(to right, #112953, #07152e);
+            padding: 20px;
+            margin: 0;
+        }
+        
+        .header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            background: linear-gradient(to right, #3c6ab9d7, #09214b);
+            padding: 10px 0;
+            text-align: center;
+        }
+        
+        .logo {
+            width: 40%;
+            max-width: 80px;
+            height: auto;
+        }
+        
+        .container {
+            margin-top: 120px;
+            padding: 0 10px;
+        }
+        
+        img {
+            width: 100%;
+            max-width: 500px;
+            height: auto;
+            border: none;
+            border-radius: 15px;
+            
+        }
+        
+        .button {
+            display: block;
+            margin: 15px auto;
+            padding: 10px 20px;
+            font-size: 20px;
+            background: linear-gradient(to right, #164ca8, #012c5c);
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            transition: 0.3s;
+            width: 80%;
+            max-width: 300px;
+        }
+        
+        .button:hover {
+            background: linear-gradient(to right, #3c6ab9, #07152e);
+        }
+
+        .description-container {
+            background-color: #07152e;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            margin-top: 20px;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+
+        .description {
+            font-size: 16px;
+            line-height: 1.5;
+            color: white;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #09214b;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+            max-width: 600px;
+            margin: 10px auto;
+            margin-top: 50px;
+        }
+
+        .icons {
+            font-size: 24px;
+            color: #0c1744;
+            margin-right: 8px;
+        }
+
+        .icon-container {
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 8px;
+            color: white;
+        }
+
+        .icon-container span {
+            font-size: 28px;
+            margin-right: 8px;
+
+        }
+
+        .icon-container div {
+            text-align: left;
+            max-width: 300px;
+            margin: 0 10px;
+        }
+
+        .detalle {
+            color: aliceblue;
+            background: linear-gradient(to right, #00439b, #07152e);
+            margin-left: 400px;
+            margin-right: 400px;
+            border-radius: 80px;
+            animation: blink 1.5s infinite;
+            margin-top: 100px;
+            margin-bottom: -80px;
+        }
+
+        .container .icon-container.premio-1 {
+            background-color: #07152e; /* Premio 1 - color dorado */
+            margin-top: 150px;
+            margin-right: 500px;
+            
+        }
+
+        .container .icon-container.premio-2 {
+            background-color: #07152e; /* Premio 2 - color azul */
+            margin-left: 500px;
+            
+        }
+
+        .container .icon-container.fecha {
+            background-color: #07152e; /* Fecha - color rojo */
+            margin-right: 500px;
+            
+        }
+
+        .container .icon-container.hora {
+            background-color: #07152e; /* Horario - color morado */
+            margin-left: 500px;
+            
+        }
+
+        .premio-3 {
+            background-color: #07152e; /* Horario - color morado */
+            color: aliceblue;
+            margin-right: 505px;
+            border-radius: 8px;
+            display: flex;
+            align-items: center;
+            margin-bottom: 15px;
+            justify-content: center;
+            padding: 10px;
+            border-radius: 8px;
+            
+        }
+
+        .container .icon-container:hover{
+            background: linear-gradient(to right, #3c6ab9, #07152e);
+            
+        }
+
+        .premio-3:hover{
+            background: linear-gradient(to right, #3c6ab9, #07152e);
+            
+        }
+
+        .whatsapp-button {
+            position: fixed;
+            right: 20px;
+            bottom: 20px;
+            background: #25d366;
+            color: white;
+            border: none;
+            padding: 15px;
+            border-radius: 50%;
+            font-size: 25px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 60px;
+            height: 60px;
+        }
+
+        .whatsapp-button img {
+            width: 40px;
+            height: 40px;
+        }
+
+        .whatsapp-button:hover {
+            background: #128C7E;
+        }
+
+        /* Estilo para la ventana emergente */
+        .popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            z-index: 1000;
+            text-align: center;
+            display: none;
+        }
+
+        .popup .counter {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        .container11{
+            background: #ffffff;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <img src="logo.jpeg" alt="Logo" class="logo">
+    </div>
+    <div class="container">
+        <img src="img.jpg" alt="Imagen de ejemplo">
+        <div class="description-container">
+            <a href="https://wa.me/message/2SURYDXUO4ZXJ1" class="button">Comprar Boleto</a>
+            <p class="description">
+                SE REALIZARAN DOS DINAMICAS AL DIA <br>
+                HORARIOS <br>
+                1️⃣ PRIMER: sorteo 10PM<br>
+                2️⃣ SEGUNDO: sorteo 4PM<br><br>
+                1) Premio: 2 bera brf 0km 2025 <br><br>
+                2) Premio: 200$ en efectivo entrega inmediata<br><br>
+                Ranking: 150$ a repartir a los que compren más boletos <br><br>
+            </p>
+            <a href="https://wa.me/message/2SURYDXUO4ZXJ1" class="button">Comprar Boleto</a>
+        </div>
+        <div class="icon-container">
+            <span>🏆</span>
+            <div><strong>Premio 1:</strong> 2 BERA BRF 0KM 2025</div>
+        </div>
+        <div class="icon-container">
+            <span>💵</span>
+            <div><strong>Premio 2:</strong> 200$ en efectivo, entrega inmediata</div>
+        </div>
+        <div class="icon-container">
+            <span>📅</span>
+            <div><strong>Fecha del evento:</strong> 20/03/2025</div>
+        </div>
+        <div class="icon-container">
+            <span>⏰</span>
+            <div><strong>Hora del evento:</strong> 10 PM</div>
+        </div>
+        <div class="icon-container">
+            <span class="icons">🎁</span>
+            <div><strong>150$ para repartir:</strong> 150$ para repartir a las personas que compre mas numero</div>
+        </div>
+    </div>
+    </div>
+    <a href="https://wa.me/message/2SURYDXUO4ZXJ1" class="whatsapp-button">
+        <img src="img/descarga (4).jpeg" alt="WhatsApp">
+    </a>
+</body>
+</html>
+
+</body>
+</html>
