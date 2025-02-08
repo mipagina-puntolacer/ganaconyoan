@@ -241,6 +241,36 @@
         .container11{
             background: #ffffff;
         }
+
+        /* Estilo para la ventana emergente */
+        .popup {
+            position: fixed;
+            top: 20%;
+            left: 50%;
+            transform: translateX(-50%);
+            background-color: rgba(0, 0, 0, 0.7);
+            color: white;
+            padding: 20px;
+            border-radius: 10px;
+            font-size: 20px;
+            z-index: 1000;
+            text-align: center;
+            display: none;
+        }
+
+        .popup .counter {
+            font-weight: bold;
+            font-size: 30px;
+        }
+
+        .popup .close-btn {
+            position: absolute;
+            top: 5px;
+            right: 10px;
+            color: white;
+            font-size: 30px;
+            cursor: pointer;
+        }
     </style>
 </head>
 <body>
@@ -282,13 +312,69 @@
             <span class="icons">🎁</span>
             <div><strong>150$ para repartir:</strong> 150$ para repartir a las personas que compre mas numero</div>
         </div>
+
+        <!-- Ventana emergente para la cuenta regresiva -->
+     <div id="popup" class="popup">
+        <span class="close-btn" id="closePopup">×</span>
+        Se redireccionará en <span id="counter" class="counter">10</span> segundos
     </div>
-    </div>
+
     <a href="https://wa.me/message/2SURYDXUO4ZXJ1" class="whatsapp-button">
-        <img src="descarga (4).jpeg" alt="WhatsApp">
+        <img src="logo2.jpeg" alt="WhatsApp">
     </a>
 </body>
 </html>
+
+<script>
+    // Mostrar la ventana emergente después de 5 segundos
+    window.onload = function() {
+        setTimeout(function() {
+            var popupElement = document.getElementById("popup");
+            var countdown = 10;
+            var counterElement = document.getElementById("counter");
+
+            // Mostrar el popup
+            popupElement.style.display = "block";
+
+            // Iniciar la cuenta regresiva
+            var countdownInterval = setInterval(function() {
+                countdown--;
+                counterElement.textContent = countdown;
+
+                if (countdown === 0) {
+                    clearInterval(countdownInterval);
+                    window.location.href = "https://wa.me/message/2SURYDXUO4ZXJ1"; // Redirección al grupo
+                }
+            }, 1000);
+
+        }, 5000); // Esperar 5 segundos antes de mostrar el popup
+
+        // Cerrar la ventana emergente cuando se haga clic en la "X"
+        document.getElementById("closePopup").onclick = function() {
+            document.getElementById("popup").style.display = "none";
+
+            // Mostrar el popup nuevamente después de 10 segundos
+            setTimeout(function() {
+                var popupElement = document.getElementById("popup");
+                var countdown = 10;
+                var counterElement = document.getElementById("counter");
+
+                popupElement.style.display = "block";
+
+                // Iniciar la cuenta regresiva
+                var countdownInterval = setInterval(function() {
+                    countdown--;
+                    counterElement.textContent = countdown;
+
+                    if (countdown === 0) {
+                        clearInterval(countdownInterval);
+                        window.location.href = "https://wa.me/message/2SURYDXUO4ZXJ1"; // Redirección al grupo
+                    }
+                }, 1000);
+            }, 10000); // Aparecerá nuevamente después de 10 segundos
+        };
+    };
+</script>
 
 </body>
 </html>
